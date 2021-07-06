@@ -62,16 +62,24 @@ public abstract class CharacterClass implements BaseClass{
     public void setAttackAmount(int attackAmount) {
         this.attackAmount = attackAmount;
     }
+    //Небольшая логика в значении очков здоровья
+    public void setHealthPoints(int healthPoints) {
+        //если значение очков здоровья меньше нуля, то не допускаем отрицательного значения
+        if (healthPoints < 0) this.healthPoints = 0;
+        //если значение очков здоровья больше, чем максимально возможное, то оно равно максимально возможному
+        else if (healthPoints > this.healthPoints) this.healthPoints = maxHealthPoints;
+        else this.healthPoints = healthPoints;
+    }
+    //Аналогичная логика для очков маны
+    public void setManaPoints(int manaPoints) {
+        if (manaPoints < 0) this.manaPoints = 0;
+        else if (manaPoints > this.manaPoints) this.manaPoints = maxManaPoints;
+        else this.manaPoints = manaPoints;
+    }
     public int getHealthPoints() {
         return healthPoints;
     }
-    public void setHealthPoints(int healthPoints) {
-        this.healthPoints = healthPoints;
-    }
     public int getManaPoints() {
         return manaPoints;
-    }
-    public void setManaPoints(int manaPoints) {
-        this.manaPoints = manaPoints;
     }
 }
