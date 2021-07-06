@@ -16,20 +16,31 @@ public abstract class CharacterClass implements BaseClass{
     @Override
     public void attack() {
     }
+    //Восстановление очков жизни или маны = текущее значение + переданное количество
     @Override
-    public void restoreHealth() {
+    public void restoreHealth(int amount) {
+        setHealthPoints(this.healthPoints + amount);
     }
     @Override
-    public void restoreMana() {
+    public void restoreMana(int amount) {
+        setManaPoints(this.manaPoints + amount);
+    }
+    //Потеря очков жизни или маны = текущее значение - переданное количество
+    @Override
+    public void loseHealth(int amount) {
+        setHealthPoints(this.healthPoints - amount);
     }
     @Override
-    public void loseHealth() {
+    public void loseMana(int amount) {
+        setManaPoints(this.manaPoints - amount);
     }
-    @Override
-    public void loseMana() {
-    }
+    //Информация о персонаже
     @Override
     public void info() {
+        System.out.println("Имя: " + this.name +
+                          "\nУровень: " + this.level +
+                          "\nHP: " + this.healthPoints +"/" + this.maxHealthPoints +
+                          "\nMP: "+ this.manaPoints + "/"+ this.maxManaPoints);
     }
 
     public String getName() {
@@ -54,6 +65,7 @@ public abstract class CharacterClass implements BaseClass{
         return level;
     }
     public void setLevel(int level) {
+        if (level < 0) System.out.println("Вы достигли минимального уровня!");
         this.level = level;
     }
     public int getAttackAmount() {
