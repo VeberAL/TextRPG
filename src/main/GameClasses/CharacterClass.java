@@ -3,6 +3,7 @@ package main.GameClasses;
 //Класс игрового персонажа, наследуемый от базового класса
 public abstract class CharacterClass implements BaseClass{
     private String name;
+    private AttackType attackType;
     private int maxHealthPoints;
     private int maxManaPoints;
     private int level;
@@ -93,5 +94,11 @@ public abstract class CharacterClass implements BaseClass{
     }
     public int getManaPoints() {
         return manaPoints;
+    }
+    public AttackType getAttackType() {
+        return attackType;
+    }
+    public void setAttackType(AttackType attackType) {
+        this.attackType = attackType;
     }
 }
