@@ -73,7 +73,8 @@ public abstract class CharacterClass implements BaseClass{
         return attackAmount;
     }
     public void setAttackAmount(int attackAmount) {
-        this.attackAmount = attackAmount;
+        if (attackAmount < 0) System.out.println("Вы не наносите урон!");
+        else this.attackAmount = attackAmount;
     }
     //Небольшая логика в значении очков здоровья
     public void setHealthPoints(int healthPoints) {
