@@ -1,5 +1,6 @@
 package main;
 
+import main.Dungeons.Dungeon;
 import main.GameClasses.Characters.Archer;
 import main.GameClasses.Characters.Healer;
 import main.GameClasses.Characters.Mage;
@@ -12,7 +13,8 @@ public class Main {
                                 new Archer("GreenArrow"),
                                 new Healer("Support"));
         party.info();
-
+        Dungeon dungeon = new Dungeon();
+        party.enterDungeon(dungeon);
 
     }
 }

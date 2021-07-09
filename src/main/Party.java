@@ -1,5 +1,6 @@
 package main;
 
+import main.Dungeons.Dungeon;
 import main.GameClasses.CharacterClass;
 
 public class Party {
@@ -10,6 +11,10 @@ public class Party {
         for (int i = 0; i < partyMembers.length; i++){
             partyMembers[i] = members[i];
         }
+    }
+    //Метод для входа группы в подземелье
+    public void enterDungeon(Dungeon dungeon){
+        dungeon.open(this);
     }
     public CharacterClass[] getPartyMembers() {
         return partyMembers;
