@@ -5,6 +5,7 @@ import main.GameClasses.CharacterClass;
 
 public class Party {
     private CharacterClass[] partyMembers;
+    private Dungeon dungeon;
     //Неизвестное количество элементов массива (персонажей) для группы
     public Party(CharacterClass... members){
         partyMembers = new CharacterClass[members.length];
@@ -13,8 +14,11 @@ public class Party {
         }
     }
     //Метод для входа группы в подземелье
-    public void enterDungeon(Dungeon dungeon){
-        dungeon.open(this);
+    public boolean enterDungeon(Dungeon dungeon){
+        return dungeon.open(this);
+    }
+    public void runDungeon(){
+
     }
     public CharacterClass[] getPartyMembers() {
         return partyMembers;
@@ -28,5 +32,12 @@ public class Party {
             partyMembers.info();
             }
         }
+
+    public Dungeon getDungeon() {
+        return dungeon;
     }
+    public void setDungeon(Dungeon dungeon) {
+        this.dungeon = dungeon;
+    }
+}
 

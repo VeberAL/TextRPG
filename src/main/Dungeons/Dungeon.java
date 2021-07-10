@@ -6,7 +6,7 @@ public class Dungeon implements BasicDungeon{
     private boolean isOpened = false;
 
     @Override
-    public void open(Party party)
+    public boolean open(Party party)
     {
         //Проверка на текущее кол-во участников группы для открытия подземелья
         if(party.getPartyMembers().length < 3) {
@@ -17,5 +17,6 @@ public class Dungeon implements BasicDungeon{
             System.out.println("Добро пожаловать, герои!");
             isOpened = true;
         }
+        return isOpened;
     }
 }

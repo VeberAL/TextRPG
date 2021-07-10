@@ -14,7 +14,10 @@ public class Main {
                                 new Healer("Support"));
         party.info();
         Dungeon dungeon = new Dungeon();
-        party.enterDungeon(dungeon);
+        if(party.enterDungeon(dungeon)) {
+            party.setDungeon(dungeon);
+            party.runDungeon();
+        } else System.out.println("Не удается войти.");
 
     }
 }
