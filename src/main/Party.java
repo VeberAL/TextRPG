@@ -18,7 +18,7 @@ public class Party {
         return dungeon.open(this);
     }
     public void runDungeon(){
-
+    //Здесь участники группы атакуют монстров подземелья
     }
     public CharacterClass[] getPartyMembers() {
         return partyMembers;

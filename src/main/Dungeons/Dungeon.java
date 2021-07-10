@@ -1,10 +1,11 @@
 package main.Dungeons;
 
+import main.Monsters.MonsterClass;
 import main.Party;
 
 public class Dungeon implements BasicDungeon{
     private boolean isOpened = false;
-
+    private MonsterClass[] monsters;
     @Override
     public boolean open(Party party)
     {
